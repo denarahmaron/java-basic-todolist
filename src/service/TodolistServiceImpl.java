@@ -2,6 +2,7 @@ package service;
 
 import entity.Todolist;
 import repository.TodolistRepository;
+import repository.TodolistRepositoryImpl;
 
 public class TodolistServiceImpl implements TodolistService {
 
@@ -28,7 +29,9 @@ public class TodolistServiceImpl implements TodolistService {
 
     @Override
     public void addTodolist(String todo) {
-
+        Todolist todolist = new Todolist(todo);
+        todolistRepository.add(todolist);
+        System.out.println("Success");
     }
 
     @Override
