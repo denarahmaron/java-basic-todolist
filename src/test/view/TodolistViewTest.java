@@ -21,4 +21,13 @@ public class TodolistViewTest {
 
         todolistView.showTodolist();
     }
+
+    public static void testaddTodolist(){
+        TodolistRepository todolistRepository = new TodolistRepositoryImpl();
+        TodolistService todolistService = new TodolistServiceImpl(todolistRepository);
+        TodolistView todolistView = new TodolistView(todolistService);
+
+        todolistService.addTodolist("Belajar JAVA");
+        todolistView.showTodolist();
+    }
 }
